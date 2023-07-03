@@ -12,17 +12,11 @@ void Task4()
     Console.WriteLine("Start task4: ");
     int num = ReadNumber("Input first number > ");
 
-    var result = new List<int>();
-    for (var i = 1; i <= num; i++)
+    for (var i = 2; i <= num; i += 2)
     {
-        if (i % 2 == 0)
-        {
-            Console.WriteLine("Add");
-            result.Add(i);
-        }
+        Console.WriteLine(i);
     }
 
-    Console.WriteLine(string.Join(", ", result.ToArray()));
 }
 
 Task4();
