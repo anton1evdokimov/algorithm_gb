@@ -11,32 +11,19 @@ void Task2()
 {
     Console.WriteLine("Start task2: ");
 
-    int firstNum = ReadNumber("Input first number > ");
-    int secondNum = ReadNumber("Input second number > ");
-    int thirdNum = ReadNumber("Input third number > ");
+    int num1 = ReadNumber("Input first number > ");
+    int num2 = ReadNumber("Input second number > ");
+    int num3 = ReadNumber("Input third number > ");
 
-    int result;
-    if (firstNum > secondNum)
+    int result = num1;
+
+    if (num2 > result)
     {
-        if (firstNum > thirdNum)
-        {
-            result = firstNum;
-        }
-        else
-        {
-            result = thirdNum;
-        }
+        result = num2;
     }
-    else
+    if (num3 > result)
     {
-        if (secondNum > thirdNum)
-        {
-            result = secondNum;
-        }
-        else
-        {
-            result = thirdNum;
-        }
+        result = num3;
     }
 
     Console.WriteLine($"Максимальное число: max={result}");
