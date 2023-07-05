@@ -3,6 +3,12 @@
 // 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 // 6, 1, 33 -> [6, 1, 33]
 
+int ReadNumber(string msg)
+{
+    Console.Write(msg);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
 void PrintArray(int[] array)
 {
     Console.Write('[');
@@ -18,15 +24,19 @@ void PrintArray(int[] array)
     Console.Write(']');
 }
 
-int[] CreateArray()
+int[] CreateArray(int length, int minValue, int maxValue)
 {
-    int[] array = new int[8];
+    int[] array = new int[length];
     Random rand = new Random();
     for (int i = 0; i < array.Length; i++)
-        array[i] = rand.Next(0, 100);
+        array[i] = rand.Next(minValue, maxValue);
 
     return array;
 }
 
-PrintArray(CreateArray());
+int length = ReadNumber("Введтите длину массива: ");
+int minValue = ReadNumber("Введтите минимальное значение массива: ");
+int maxValue = ReadNumber("Введтите максимальное значение массива: ");
+
+PrintArray(CreateArray(length, minValue, maxValue));
 

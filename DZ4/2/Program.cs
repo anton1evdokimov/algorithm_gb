@@ -12,10 +12,11 @@ int ReadNumber(string msg)
 int getSum(int num)
 {
     var sum = 0;
-    var str = num.ToString();
-    for (var i = 0; i < str.Length; i++)
+    var temp = num;
+    while (temp > 0)
     {
-        sum += Convert.ToInt16(str[i]) - 48;
+        sum += temp%10;
+        temp /= 10;
     }
     return sum;
 }
