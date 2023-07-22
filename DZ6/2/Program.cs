@@ -15,8 +15,22 @@ int k2 = ReadNumber("Введтите коэффициент k2: ");
 // k1* x + b1 = k2 * x + b2;
 
 int deltaB = b2 - b1;
+int deltaK = k1 - k2;
 
-int x = deltaB == 0 ? 0 : (k1 - k2) / (b2 - b1);
+if (deltaK == 0)
+{
+    if (deltaB == 0)
+    {
+        Console.WriteLine("Прямые совпадают");
+    }
+    else
+    {
+        Console.WriteLine("Прямые не пересекаются");
+    }
+    return;
+}
+
+int x = deltaB / deltaK;
 int y = k1 * x + b1;
 
 Console.WriteLine($"x = {x}; y = {y};");
